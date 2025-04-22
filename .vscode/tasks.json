@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start old-server",
+      "type": "shell",
+      "command": "poetry run langchain serve",
+      "options": { "cwd": "${workspaceFolder}/old-server" },
+      "isBackground": true,
+      "group": "build"
+    },
+    {
+      "label": "Start new-server",
+      "type": "shell",
+      "command": "uv run langgraph dev",
+      "options": {
+        "cwd": "${workspaceFolder}/new-server"
+      },
+      "isBackground": true,
+      "group": "build"
+    },
+    {
+      "label": "Start frontend",
+      "type": "shell",
+      "command": "bun dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "isBackground": true,
+      "group": "build"
+    },
+    {
+      "label": "Start All Servers",
+      "dependsOn": ["Start old-server", "Start new-server", "Start frontend"],
+      "dependsOrder": "parallel"
+    }
+  ]
+}

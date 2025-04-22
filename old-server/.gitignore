@@ -1,0 +1,7 @@
+__pycache__
+.env
+.vscode
+.idea
+chat_histories
+vectorstores
+poetry.lock

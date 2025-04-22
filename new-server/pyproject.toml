@@ -1,0 +1,19 @@
+[tool.setuptools]
+packages = ["data", "agent"]
+
+[project]
+name = "zekher-api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12.8"
+dependencies = [
+    "langchain>=0.3.14",
+    "langchain-community>=0.3.14",
+    "langchain-openai>=0.3.0",
+    "langgraph>=0.2.64",
+    "langgraph-cli[inmem]>=0.2.5",
+    "python-dotenv>=1.0.1",
+    "typing-extensions>=4.12.2",
+    "upstash-vector>=0.7.0",
+]
